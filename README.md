@@ -1,4 +1,4 @@
-# apl121-enkhnomin# apl121-enkhnomin# apl121-enkhnomin# apl121-enkhnomin
+# apl121-enkhnomin# apl121-enkhnomin# apl121-enkhnomin
 
 \# АЛГОРИТМ, ПРОГРАМЧЛАЛЫН ХЭЛ (APLI21)
 
