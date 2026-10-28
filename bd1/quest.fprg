@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="winter"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-28 09:58:27 PM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLTZSOFBWSzU7MjAyNi0xMC0yODswNjowNToxMyBQTTsyNzY0"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLTZSOFBWSzU7MjAyNi0xMC0yODswOTo1ODoyNyBQTTszOzI4OTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="celsius" type="Real" array="False" size=""/>
+            <declare name="fahrenheit" type="Real" array="False" size=""/>
+            <declare name="mintemp" type="Real" array="False" size=""/>
+            <declare name="coldday" type="Integer" array="False" size=""/>
+            <declare name="category" type="String" array="False" size=""/>
+            <declare name="clothes" type="String" array="False" size=""/>
+            <assign variable="mintemp" expression="999"/>
+            <assign variable="coldday" expression="0"/>
+            <for variable="i" start="1" end="7" direction="inc" step="1">
+                <input variable="celsius"/>
+                <assign variable="fahrenheit" expression="celsius * 9 / 5 + 32"/>
+                <if expression="celsius&gt;=0">
+                    <then>
+                        <assign variable="category" expression="&quot;warm&quot;"/>
+                        <assign variable="clothes" expression="&quot;jacket&quot;"/>
+                    </then>
+                    <else>
+                        <if expression="celsius&gt;= -10">
+                            <then>
+                                <assign variable="category" expression="&quot;cool&quot;"/>
+                                <assign variable="clothes" expression="&quot;jacket and scarf&quot;"/>
+                            </then>
+                            <else>
+                                <if expression="celsius&gt;= -20">
+                                    <then>
+                                        <assign variable="category" expression="&quot;cold&quot;"/>
+                                        <assign variable="clothes" expression="&quot;winterjacket&quot;"/>
+                                    </then>
+                                    <else>
+                                        <if expression="celsius &gt;= -30">
+                                            <then>
+                                                <assign variable="category" expression="&quot;verycold&quot;"/>
+                                                <assign variable="clothes" expression="&quot;winterjacket and scarf&quot;"/>
+                                            </then>
+                                            <else>
+                                                <assign variable="category" expression="&quot;extremelycold&quot;"/>
+                                                <assign variable="clothes" expression="&quot;winterjacket and scarf and gloves and hat&quot;"/>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;day&quot; &amp; i" newline="True"/>
+                <output expression="&quot;celsius: &quot; &amp; celsius" newline="True"/>
+                <output expression="&quot;fahrenheit: &quot; &amp; fahrenheit" newline="True"/>
+                <output expression="&quot;category: &quot; &amp; category" newline="True"/>
+                <output expression="&quot;clothes: &quot; &amp; clothes" newline="True"/>
+                <if expression="celsius &lt; mintemp">
+                    <then>
+                        <assign variable="mintemp" expression="celsius"/>
+                        <assign variable="coldday" expression="i"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="&quot;The coldest day is day &quot; &amp; coldDay" newline="True"/>
+            <output expression="&quot;The lowest temperature is &quot; &amp; mintemp &amp; &quot; C&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
